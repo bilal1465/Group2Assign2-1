@@ -2,22 +2,25 @@ package list;
 
 import utilities.StackADT;
 
-public class MyStack implements StackADT<T> {
+public class MyStack<E> implements StackADT<E> {
+	
+	private Object[] elements;
+	private int size;
 
 	@Override
-	public void push(T item) {
+	public void push(E item) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public T pop() {
+	public E pop() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public T peek() {
+	public E peek() {
 		// TODO Auto-generated method stub
 		return null;
 	}
