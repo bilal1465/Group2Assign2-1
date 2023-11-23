@@ -20,7 +20,6 @@ public class MyArrayList<E> implements ListADT<E> {
 	public void clear() {
 		elements = new Object[DEFAULT_CAPACITY];
         size = 0;
-		
 	}
 
 	@Override
@@ -43,8 +42,9 @@ public class MyArrayList<E> implements ListADT<E> {
 
 	@Override
 	public boolean add(E toAdd) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return false;
+		ensureCapacity();
+        elements[size++] = toAdd;
+        return true;
 	}
 
 	@Override
@@ -54,6 +54,7 @@ public class MyArrayList<E> implements ListADT<E> {
         return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public E get(int index) throws IndexOutOfBoundsException {
 		if (index < 0 || index >= size) {
@@ -115,6 +116,7 @@ public class MyArrayList<E> implements ListADT<E> {
         return false;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public E[] toArray(E[] toHold) throws NullPointerException {
 		if (toHold.length < size) {
