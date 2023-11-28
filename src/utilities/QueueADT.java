@@ -1,22 +1,7 @@
 package utilities;
 
-import exceptions.EmptyQueueException;
 import java.io.*;
 
-/**
- * This is the professional Queue Interface for Advanced Object 
- * Oriented Programming (CRPG 311) at SAIT Polytechnic.
- * This Queue embodies all the standard Queue operations, 
- * and includes several helper methods that will 
- * give the data structure more flexibility and use.
- * 
- * Created On: June 4, 2004
- * Updated On: Dec. 3, 2010
- * Updated On: Nov 15, 2018 by kitty
- * 
- * Queue.java
- * @author Don Heninger & Dave Watson
- */
 public interface QueueADT<E> extends Serializable
 {
 	/**
@@ -27,8 +12,9 @@ public interface QueueADT<E> extends Serializable
 	 * @param toAdd the item to be added to the Queue.
 	 * @throws NullPointerException raised when a <code>null</code> object
 	 * is placed in the Queue.
+	 * @throws utilities.EmptyQueueException 
 	 */
-	public void enqueue( E toAdd ) throws NullPointerException;
+	public void enqueue( E toAdd ) throws NullPointerException, utilities.EmptyQueueException;
 	
 	/**
 	 * Dequeue will remove the first item that was placed in the Queue.
